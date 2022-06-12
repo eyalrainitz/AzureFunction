@@ -1,0 +1,36 @@
+{
+    "bindings": [
+      {
+        "authLevel": "anonymous",
+        "type": "httpTrigger",
+        "direction": "in",
+        "name": "req",
+        "methods": [
+          "get",
+          "post"
+        ]
+      },
+      {
+        "type": "http",
+        "direction": "out",
+        "name": "res"
+      },
+      {
+        "name": "outputDocument",
+        "direction": "out",
+        "type": "cosmosDB",
+        "connectionStringSetting": "cosmospocselapoc_DOCUMENTDB",
+        "databaseName": "SampleDB",
+        "collectionName": "leases",
+        "createIfNotExists": true
+      },
+      {
+        "name": "inputDocument",
+        "direction": "in",
+        "type": "cosmosDB",
+        "connectionStringSetting": "cosmospocselapoc_DOCUMENTDB",
+        "databaseName": "SampleDB",
+        "collectionName": "leases"
+      }
+    ]
+  }
