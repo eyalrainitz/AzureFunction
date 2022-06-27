@@ -27,7 +27,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
     lis = []
     queryItems = f'SELECT * FROM c'
     try:
-        for item in container.query_items(query=f'SELECT * FROM c WHERE c.name="{name}"', enable_cross_partition_query=True):
+        for item in container.query_items(query=f'SELECT * FROM c', enable_cross_partition_query=True):
             lis.append(item)
             print(f'item {item}')
             container.delete_item(item, partition_key=item["id"])
