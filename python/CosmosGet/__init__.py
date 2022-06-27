@@ -21,7 +21,7 @@ def main(req: func.HttpRequest, inputDocument:func.DocumentList) -> func.HttpRes
     if name or number:
         data = inputDocument.data[(number)]['name']
         logging.info(data)
-        return func.HttpResponse(f"Hello, {name}. This HTTP triggered function executed successfully." + data)
+        return func.HttpResponse(f"Hello, {data}. This HTTP triggered function executed successfully.")
     else:
         return func.HttpResponse(
              "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response.",
